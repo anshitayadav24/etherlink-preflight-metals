@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Etherlink EVM Pre-flight</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Etherlink EVM pre-flight check</h1>
+    <p>Tick the capabilities your app depends on to see what Etherlink's documentation says about each, before you commit engineering time.</p>
+    <p class="limit" role="note">
+      <strong>This is a snapshot of documentation, not a chain test.</strong>
+      Verdicts were assigned by hand from the Etherlink docs on the dates shown. Nothing here talks to the network, and a
+      "supported" verdict is not a guarantee: confirm with a test deploy.
+    </p>
+  </header>
+
+  <main>
+    <section class="picker" aria-labelledby="picker-title">
+      <h2 id="picker-title">Your requirements</h2>
+      <p class="hint">Only the ones you tick are evaluated.</p>
+      <ul id="req-list" class="req-list"></ul>
+    </section>
+
+    <section class="results" aria-labelledby="results-title" aria-live="polite">
+      <h2 id="results-title">Result</h2>
+      <div id="results"></div>
+    </section>
+  </main>
+
+  <footer>
+    Scope: Etherlink EVM interface, mainnet. Statuses and their rules live in <code>data/rules.js</code>;
+    the requirement catalog lives in <code>data/requirements.js</code>.
+  </footer>
+
+  <script src="data/rules.js"></script>
+  <script src="data/requirements.js"></script>
+  <script src="engine.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
